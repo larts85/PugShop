@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Welcome to #{title}
+  p This is a site aim to Pugs Lovers
+  div.container
+    each pug in puggies 
+      div.card
+        div
+          p Nombre: !{pug.name}
+          p Edad: !{pug.age}
+          p Comidad favorita: !{pug.favFood}
+        div
+          img(url='star.png' alt='ups')

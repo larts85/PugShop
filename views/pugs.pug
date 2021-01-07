@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div.container
+    each pug in puggies 
+      div.card
+        div
+          p Nombre: !{pug.name}
+          p Edad: !{pug.age}
+          p Comidad favorita: !{pug.favFood}
+        div
+          img(url='https://picsum.photos/id/237/200/300' alt='ups')

@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+}
+.navbar a {
+  padding: 5px;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  background-color: #71abcc;
+  min-width: fit-content;
+  max-width: 300px;
+  height: fit-content;
+  padding: 7px;
+  margin: 20px;
+  border-radius: 30px;
+  box-shadow: 3px 3px 3px grey;
+}
+.card p {
+  padding-left: 15px;
+}
