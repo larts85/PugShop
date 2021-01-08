@@ -7,7 +7,6 @@ block content
     each pug, i in puggies 
       div.card 
         - const id = pug.id;
-        - console.log(id)
         script.
           function addFav(){
             axios.get(`http://localhost:3000/fav/${id}`)
