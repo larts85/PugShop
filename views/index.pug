@@ -4,11 +4,18 @@ block content
   h1 Welcome to #{title}
   p This is a site aim to Pugs Lovers
   div.container
-    each pug in puggies 
-      div.card
-        div
-          p Nombre: !{pug.name}
-          p Edad: !{pug.age}
-          p Comidad favorita: !{pug.favFood}
-        div
-          img(url='star.png' alt='ups')
+    each pug, i in puggies 
+      div.card 
+        - const id = pug.id;
+        - console.log(id)
+        script.
+          function addFav(){
+            axios.get(`http://localhost:3000/fav/${id}`)
+          }
+        p#star(onclick='addFav()') &star;
+        p Name: 
+          span !{pug.name}
+        p Age: 
+          span !{pug.age}
+        p Favorite food: 
+          span !{pug.favFood}

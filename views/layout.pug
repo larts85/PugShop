@@ -3,8 +3,32 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js')
   body
     nav.navbar
-      a(href="/"): h3 Inicio
-      a(href="/fav"): h3 Favoritos
+      div.links
+        a(href="/"): h3 Inicio
+        a(href="/fav"): h3 Favoritos
+        //- form.searchBar 
+        //-   script.
+        //-     const select = (id) => {
+        //-       console.log(id)
+        //-       if(id !== ''){
+        //-         axios.get(`http://localhost:3000/filter/${id}`)
+        //-       }
+        //-     }
+        //-   label.label Edad
+        //-   select(id='filterAge' name="filterAge" onchange=`select(value)`)
+        //-     option(value='') --Selecciona una edad--
+        //-     option(value='puppies') Cachorro
+        //-     option(value='six+') Mas de seis meses
+        //-     option(value='two-') Menos de dos a&ntilde;o
+        //-     option(value='two+') Mas de dos a&ntilde;o
+      div.searchBar
+        label.label Nombres
+        form(method='GET' action='/order/asc')
+          button(type="submit" name='asc') Asc
+        form(method='GET' action='/order/desc')
+          button(type="submit" name='desc') Desc
     block content
+

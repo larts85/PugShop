@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const puggies = require("../db/pugs");
+const Pug = require("../models/pugs");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", async (req, res, next) => {
+  // console.log("req", req);
+  const pugs = await Pug.find();
   res.render("index", {
     title: "PugShop",
-    puggies: puggies.puggies,
+    puggies: pugs,
   });
 });
 

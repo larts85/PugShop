@@ -1,11 +1,22 @@
 extends layout
 
 block content
+  script.
+    const select = (id) => {
+      console.log(id)
+      if(id !== ''){
+        axios.get(`http://localhost:3000/filter/${id}`)
+      }
+    }
+    
+  h1 Your favorites Pugs
   div.container
-    div.card
-      div
-        p Nombre: !{name}
-        p Edad: !{age}
-        p Comidad favorita: !{favFood}
-      div
-        img(url='../public/images/star.png' alt='ups')
+    each pug in fav
+      div.card
+        p#star &star;
+          p Name: 
+            span !{pug.name}
+          p Age: 
+            span !{pug.age}
+          p Favorite food: 
+            span !{pug.favFood}

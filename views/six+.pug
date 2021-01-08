@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  script(type='text/javascript').
+    let handleOnClick = () => {
+    }
+    
+  h1 Welcome to #{title}
+  p This is a site aim to Pugs Lovers
+  div.container
+    each pug in puggies 
+      div.card
+        p#star(onclick='handleOnClick()') &star;
+        p Name: 
+          span !{pug.name}
+        p Age: 
+          span !{pug.age}
+        p Favorite food: 
+          span !{pug.favFood}
