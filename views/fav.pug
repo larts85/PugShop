@@ -17,6 +17,6 @@ block content
           p Name: 
             span !{pug.name}
           p Age: 
-            span !{pug.age}
+          span !{pug.age < 1 ? '< 1 año': pug.age + ' años'}
           p Favorite food: 
             span !{pug.favFood}
